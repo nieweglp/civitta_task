@@ -2,6 +2,7 @@ import mlflow
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
 
+
 def train():
     model_pipeline = Pipeline([
         ("preprocessor", preprocessing_pipeline),

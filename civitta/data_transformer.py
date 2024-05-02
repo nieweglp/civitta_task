@@ -29,6 +29,9 @@ class DataTransformer:
             random_state=self.seed, 
             train_size=0.8
         )
+    
+    def generate_random_under_sampling(self):
+        pass
                 
     
 
