@@ -1,4 +1,4 @@
-1. Setup environment
+### 1. Setup environment
 
 First of all to run all codes, we have to create Python virtual environment.
 All project was written in Python 3.10
@@ -22,7 +22,7 @@ Then install all packages by:
 After installation we can run jupyter notebook or jupyter-lab from terminal.
 
 
-2. Dataset Exploratory Data Analysis.
+### 2. Dataset Exploratory Data Analysis.
 
 Every file loan_information, client_information and loan_outcome_information contains the same number of samples. I join all files by client_id key
 
@@ -57,7 +57,7 @@ Dataset has imbalanced target variable(client_type), so we cannot look only at a
 
 We should balance training dataset and we can do the same on test set(but it's not necessairy).
 
-2. ML model.
+### 3. ML model.
 Column client_type is our target variable, which contains 3 labels: default, regular and early. So at the first stage we have mulclass classification.
 
 We know from EDA that distributions of ratio for default and early are similar and within scope 0 to 1. Best pair, where we can find differences in distribution is default and regular. But there when we train on pair default and regular, when new client arrive we cannot 
@@ -73,7 +73,7 @@ I used RandomForestClassifier and XGBoost classifier models, because their are u
 
 Before I trained a ML model, I have to prepare X features, which will describe y(client_type) target variable. To do this I have to encode categorical features like region, branch, client_gender, loan_type using one hot encoding method.
 
-3. Risk/not Risky client profile.
+### 4. Risk/not Risky client profile.
 
 Usually lower risk client is a client, who has higher income.
 Higher risk of default is for clients with higher interest rates.
@@ -87,7 +87,7 @@ Ratio has huge impact into default prediction for both models.. Another importan
 High Shapley value for feature increasing probability of pay loan on time. From the other hand lower Shapley values decrease probability of loan default.
 
 
-4. Conclusion:
+### 5. Conclusion:
 
 The biggest challenge in this dataset is that early client looks familiar to default. Distribution per each type is similiar. It's quite challenging to find diffrences when, we have the same distribution in the same range. Ratio column clearly shows this effect. 
 
