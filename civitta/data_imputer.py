@@ -11,4 +11,3 @@ class DataImputer:
         kds.mice(2)
         df_imputed = kds.complete_data()
         return df_imputed
-
